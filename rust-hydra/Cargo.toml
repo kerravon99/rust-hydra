@@ -1,0 +1,22 @@
+[package]
+name = "rust-hydra"
+version = "0.3.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+async-trait = "0.1"
+colored = "2"
+indicatif = "0.17"
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+reqwest = { version = "0.11", features = ["cookies"] }
+ssh2 = "0.9"
+ftp = "3.0"
+
+# 🔹 NEW: RDP
+rdp-rs = "0.4"
