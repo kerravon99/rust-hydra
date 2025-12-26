@@ -1,7 +1,19 @@
 # Rust-Hydra
 
-A **Hydra-like credential attack tool written in Rust**, designed for
-**authorized security labs only** (TryHackMe, Hack The Box, local test environments).
+## Project Summary
+
+Rust-Hydra is a high-performance, Rust-based password testing tool inspired by Hydra. Designed for **educational and authorized lab environments**, it allows you to perform credential testing on HTTP, SSH, and FTP services safely. It features:
+
+- Asynchronous, concurrent authentication attempts
+- Modular protocol support (HTTP, SSH, FTP)
+- Hydra-style CLI compatibility
+- Automatic protocol detection (scheme, port, probe)
+- Resume and restore capabilities
+- Streaming wordlists with zero RAM growth
+- Progress bars with ETA tracking
+- Stop-on-success option
+
+This project is meant for **CTFs, labs, and authorized penetration tests only**.
 
 ⚠️ **DO NOT USE AGAINST SYSTEMS YOU DO NOT OWN OR HAVE EXPLICIT PERMISSION TO TEST.**
 
@@ -29,8 +41,8 @@ A **Hydra-like credential attack tool written in Rust**, designed for
 | SSH | ✅ |
 | FTP | ✅ |
 | RDP | ✅ |
-| SMB | ❌ |
-| WinRM | ❌ |
+| SMB | ✅ |
+| WinRM | ✅ |
 
 ---
 
@@ -41,7 +53,7 @@ git clone https://github.com/YOUR_USERNAME/rust-hydra.git
 cd rust-hydra
 cargo build --release
 
-Usage
+Usage 
 HTTP Form
 ./target/release/rust-hydra http http://10.10.10.10/login \
   -L users.txt \
@@ -71,6 +83,42 @@ Progress will be saved automatically.
 Resume with:
 
 ./rust-hydra ... --resume
+
+Future Development Goals
+
+Hydra .restore file compatibility
+
+Per-protocol progress bars
+
+Attempt rate limiting (requests/sec)
+
+Output file logging (-o option)
+
+Hydra-style HTTP POST form syntax support
+
+Protocol autodetection fallback order
+
+Additional protocols (SMB, RDP, MySQL)
+
+Improved resume & checkpoint accuracy with streaming wordlists
+
+Advanced concurrency and queue management
+
+Legal & Ethical Disclaimer
+
+Rust-Hydra is intended solely for educational purposes and authorized environments:
+
+TryHackMe CTFs
+
+Hack The Box labs
+
+Your own systems
+
+Explicitly authorized penetration tests
+
+Do NOT use this tool on production systems, public websites, or networks without permission. Unauthorized access is illegal and unethical.
+
+By using this software, you accept full responsibility for compliance with laws and regulations in your jurisdiction.
 
 ⚠️ Legal Disclaimer
 
